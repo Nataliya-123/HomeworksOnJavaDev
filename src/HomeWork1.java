@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class HomeWork1 {
 
@@ -13,14 +12,15 @@ public class HomeWork1 {
         int c = sc.nextInt();
         if ((a - b) * (c - a) >= 0) {
             System.out.print(a);
+
         } else if ((b - a) * (c - b) >= 0) {
             System.out.print(b);
+
         } else {
             System.out.print(c);
-            sc.close();
+
         }
         System.out.println();
-
         System.out.println("_________________________");
 
 
@@ -39,45 +39,44 @@ public class HomeWork1 {
         int amountOfDayInMonth = 0;
 
         switch (month) {
-            case (1):
-            case (3):
-            case (5):
+            case 1:
+            case 3:
+            case 5:
             case 7:
             case 8:
             case 10:
             case 12:
                 amountOfDayInMonth = 31;
-                break;
+
             case 4:
             case 6:
             case 9:
             case 11:
                 amountOfDayInMonth = 30;
-                break;
             case 2:
                 if (((year % 4 == 0) && !(year % 100 == 0)) || (year % 400 == 0)) {
                     amountOfDayInMonth = 29;
+
                 } else {
                     amountOfDayInMonth = 28;
-                    break;
                 }
         }
         if (day == amountOfDayInMonth && month == 12) {
             year = year + 1;
             day = 1;
             month = 1;
+            sc.close();
         }
-        if (day == amountOfDayInMonth && month != 12) {
+        else if (day == amountOfDayInMonth && month != 12) {
             day = 1;
             month = month + 1;
+            sc.close();
         }
-        if (day != amountOfDayInMonth) {
+        else   {
             day = day + 1;
         }
+        sc.close();
         System.out.println("Дата следующего дня: " + day + " " + month + " " + year);
-
-        System.out.println();
-
         System.out.println("_________________________");
 
 //        На некотором предприятии инженер Петров создал устройство, на табло которого показывается количество секунд,

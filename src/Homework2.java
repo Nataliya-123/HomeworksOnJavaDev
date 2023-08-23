@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Homework2 {
     public static void main(String[] args) {
-//        //Необходимо вывести на консоль такую последовательность чисел:
+        //Необходимо вывести на консоль такую последовательность чисел:
         //     1 2 4 8 16 32 64 128 256 512
         int a = 1;
         while (a <= 512) {
@@ -10,7 +10,6 @@ public class Homework2 {
             a *= 2;
         }
         System.out.println();
-
         System.out.println("_________________________");
 
 
@@ -28,26 +27,27 @@ public class Homework2 {
         }
 
         System.out.println("sum of numbers is: " + sum);
-        System.out.println("sum of numbers is: " + mult);
+        System.out.println("multiplication of numbers is: " + mult);
 
         System.out.println();
 
         System.out.println("_________________________");
 
 
-//        //Найдите самую большую цифру числа, введенного с клавиатуры, а также ее индекс
+        //Найдите самую большую цифру числа, введенного с клавиатуры, а также ее индекс
         System.out.println("Введите число");
         int d = scanner.nextInt();
         int maxNumber = 0;
+        int maxIndex = -1;
         while (d > 0) {
             if (d % 10 > maxNumber) {
                 maxNumber = d % 10;
-
+                maxIndex += 1;
             }
-
             d /= 10;
         }
         System.out.println("Max: " + maxNumber);
+        System.out.println("Индекс: " + maxIndex);
         System.out.println();
         System.out.println("_________________________");
 
@@ -57,16 +57,16 @@ public class Homework2 {
         int f = scanner.nextInt();
         int res = 1;
         for (int i = 1; i <= f; i++) {
-            res = res * i;
+            res += i;
         }
-        System.out.println(res);
+        System.out.println("Факториал числа " + f + " " + res);
         System.out.println();
         System.out.println("_________________________");
 
-//Выведите на экран первые 10 членов последовательности Фибоначчи
+////Выведите на экран первые 10 членов последовательности Фибоначчи
         int n = 10;
         int g = 0, j = 1;
-        System.out.print(n + " " + j);
+        System.out.print("Первые 10 членов последовательности Фибоначчи: " + g + " " + j);
         int fib = 2, i = 2;
         while (i < n) {
             fib = g + j;
@@ -85,12 +85,12 @@ public class Homework2 {
 //        единиц боевой техники и каждая боевая машина имеет номер от 00001 до 99999,
 //        то сколько всего номеров придётся исключить?
 
-        int nn, jj;
-        jj = 0;
+        int nn;
+        int jj = 0;
         for (int ii = 1; ii < 100000; ii++) {
             nn = ii;
             while (nn != 0) {
-                if (nn % 10 == 4 || nn % 100 + 10 * nn % 10 == 13) {
+                if (nn % 10 == 4 || nn % 100 == 13) {
                     jj++;
                     break;
                 }
@@ -119,7 +119,7 @@ public class Homework2 {
                                 if (x1 + x2 + x3 == x4 + x5 + x6) {
                                     c++;
                                 }
-        System.out.print(c);
+        System.out.print("Счастливых билетов: " + c);
         System.out.println();
         System.out.println("_________________________");
 
@@ -136,9 +136,9 @@ public class Homework2 {
                     (p / 1000 % 10 == 2) || (p / 10000 == 2))
                 counter++;
         }
-        System.out.println(counter);
+        System.out.println("Ошибочных табличек: " + counter);
 
-
+//
 //        Для введенного целого числа определить является ли это число простым
         System.out.println("Введите число");
         int z = scanner.nextInt();
